@@ -11,7 +11,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Gemini response generator
 def get_gemini_response(prompt_intro, pdf_text, job_desc):
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-1.5-pro')
     response = model.generate_content([prompt_intro, pdf_text, job_desc])
     return response.text
 
@@ -81,6 +81,7 @@ st.markdown(
     "<p style='text-align: center; font-size: 14px; color: gray;'>© 2025 All rights reserved by <strong>Ayush Jain</strong></p>",
     unsafe_allow_html=True
 )
+
 
 
 
